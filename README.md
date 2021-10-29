@@ -102,15 +102,19 @@ GET `/course/{courseId}/student/{studentId}`
 ### Report
 
 GET `/admin/registrations/course/{courseId}` - Returns list of students in the course
-    - return List<Student>
+    
+     return List<Student>
 
 GET `/admin/registrations/student/{studentId}` - Returns list of courses that the students is enrolled
+    
     - return List<Course>
 
 GET `/admin/registrations/empty-courses` - Returns list of courses with no students enrolled
+    
     - return List<Course>
 
 GET `/admin/registrations/no-enrolled-students` - Returns list of students registered in none course
+    
     - return List<Student>
     
 

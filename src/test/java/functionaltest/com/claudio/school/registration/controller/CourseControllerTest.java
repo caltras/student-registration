@@ -57,8 +57,7 @@ class CourseControllerTest {
                 .jsonPath("$.id").isNotEmpty()
                 .jsonPath("$.name").isNotEmpty()
                 .jsonPath("$.name").isEqualTo("Web development")
-                .jsonPath("$.createdAt").isNotEmpty()
-                .jsonPath("$.students").isEmpty();
+                .jsonPath("$.createdAt").isNotEmpty();
     }
 
     @Order(2)
@@ -70,7 +69,7 @@ class CourseControllerTest {
         c = this.repository.save(c);
 
         String courseJson = "{\"id\":"+c.getId()+", \"name\": \"Web development updated\"}";
-        webClient.post()
+        webClient.put()
                 .uri("/course")
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON)
@@ -82,13 +81,12 @@ class CourseControllerTest {
                 .jsonPath("$.id").isEqualTo(c.getId())
                 .jsonPath("$.name").isNotEmpty()
                 .jsonPath("$.name").isEqualTo("Web development updated")
-                .jsonPath("$.createdAt").isNotEmpty()
-                .jsonPath("$.students").isEmpty();
+                .jsonPath("$.createdAt").isNotEmpty();
     }
 
     @Order(3)
     @Test
-    void deleteStudent() throws Exception {
+    void deleteCourse() throws Exception {
         webClient.delete()
                 .uri("/course/1")
                 .accept(MediaType.APPLICATION_JSON)
@@ -98,7 +96,7 @@ class CourseControllerTest {
 
     @Order(4)
     @Test
-    void getStudent() throws Exception {
+    void getCourse() throws Exception {
         Course c = new Course();
         c.setName("ABC");
         c = this.repository.save(c);

@@ -61,8 +61,7 @@ class StudentControllerTest {
                 .jsonPath("$.name").isNotEmpty()
                 .jsonPath("$.name").isEqualTo("Alex")
                 .jsonPath("$.dateOfBirthday").isNotEmpty()
-                .jsonPath("$.dateOfBirthday").isEqualTo("1980-01-01")
-                .jsonPath("$.courses").isEmpty();
+                .jsonPath("$.dateOfBirthday").isEqualTo("1980-01-01");
     }
 
     @Order(2)
@@ -88,8 +87,7 @@ class StudentControllerTest {
                 .jsonPath("$.name").isNotEmpty()
                 .jsonPath("$.name").isEqualTo("Alex Updated")
                 .jsonPath("$.dateOfBirthday").isNotEmpty()
-                .jsonPath("$.dateOfBirthday").isEqualTo(st.getDateOfBirthday().toString())
-                .jsonPath("$.courses").isEmpty();
+                .jsonPath("$.dateOfBirthday").isEqualTo(st.getDateOfBirthday().toString());
     }
 
     @Order(3)
@@ -121,7 +119,6 @@ class StudentControllerTest {
                 .jsonPath("$.name").isNotEmpty()
                 .jsonPath("$.name").isEqualTo("ABC")
                 .jsonPath("$.dateOfBirthday").isNotEmpty()
-                .jsonPath("$.dateOfBirthday").isEqualTo(st.getDateOfBirthday().toString())
-                .jsonPath("$.courses").isEmpty();
+                .jsonPath("$.dateOfBirthday").isEqualTo(st.getDateOfBirthday().toString());
     }
 }

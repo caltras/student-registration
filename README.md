@@ -17,6 +17,8 @@ To build the project, you have to run the command `./gradlew build`.
 you can run the test isolated (after build), running the command `./gradlew test`.
 It will run the functional tests and unit tests.
 
+The reports are available under the folder `build/reports`
+
 
 ## Run the project
 
